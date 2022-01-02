@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сортировка выбором</title>
+    <script type="text/javascript">
+        const arr = [5, 3, 7, 8, 12, 2, 4, 6, 9, 0, 1, 11, 10];
+
+        const findSmallest = (arr) => {
+            let elem = arr[0];
+            let index = 0;
+
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] < elem) {
+                    elem = arr[i];
+                    index = i;
+                }
+            }
+
+            return index
+        }
+
+        const selectionSort = (arr) => {
+            const newArr = new Array;
+            const backupArr = arr.slice(0);
+            
+            for (let i = 0; i < arr.length; i++) {
+                const index = findSmallest(backupArr);
+                newArr.push(backupArr[index]);
+                backupArr.splice(index, 1);
+            }
+
+            return newArr;
+        }
+
+        console.log(selectionSort(arr))
+    </script>
+</head>
+<body></body>
+</html>
