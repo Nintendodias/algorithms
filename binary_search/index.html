@@ -16,16 +16,15 @@
 
         function binary_search(array, number) {
             const backupArray = array.slice(0);
-            console.log(backupArray)
+
             array.sort(sortingArray);
-            console.log(array)
+
             let low = 0;
             let high = array.length;
             
             while (low <= high) {
                 let middle = Math.round((low + high) / 2);
                 let guess = array[middle];
-                console.log("asd")
 
                 if (guess === number) {
                     return backupArray.indexOf(guess)
@@ -50,7 +49,5 @@
         console.log("Искомое число находится в позиции " + binary_search(array, 9))
     </script>
 </head>
-<body>
-    
-</body>
+<body></body>
 </html>
